@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
+void print_buffer(char buffer[], int *buff_indicator);
 
 /**
  * _printf - function that produces output according to a format.
@@ -39,8 +39,7 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			++i;
-			printfeed = handle_print(format, &i, list, buffer,
-				flags, width, precision, size);
+			printfeed = handle_print(format, &i, list, buffer, flags, width, precision, size);
 			if (printfeed == -1)
 				return (-1);
 			print_char += printfeed;
@@ -67,4 +66,3 @@ void print_buffer(char buffer[], int *buff_indicator)
 
 	*buff_indicator = 0;
 }
-
