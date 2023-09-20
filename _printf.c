@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	print_buffer(buffer, &buff_indicator);
+	printing(buffer, &buff_indicator);
 	va_end(list);
 
 	return (print_char);
@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
  * @buffer: define an array of chars types
  * @buff_indicator: represents the length.
  */
-void print_buffer(char buffer[], int *buff_indicator)
+void printing(char buffer[], int *buff_indicator)
 {
 	if (*buff_indicator > 0 && buff_indicator != '\0')
 		write(1, &buffer[0], *buff_indicator);
